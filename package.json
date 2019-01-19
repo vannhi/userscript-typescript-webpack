@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "@types/webpack": "^4.4.23",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.ts",
+    "build-dev": "webpack --config webpack.config.ts --mode development",
+    "build-clip": "webpack --config webpack.config.ts && yarn run content-to-clipboard",
+    "build-clip-dev": "webpack --config webpack.config.ts --mode development && yarn run content-to-clipboard",
+    "content-to-clipboard": "clip < dist/script.user.js"
+  }
+}
