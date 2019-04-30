@@ -9,6 +9,10 @@
 // @noframes
 // ==/UserScript==
 
+import { of } from 'rxjs';
+
 (function() {
-  console.log("Congratulation! You took over the world!");
+  of('world').subscribe(name => {
+    console.log(`Congratulation! You took over the ${name}!`);
+  });
 })();

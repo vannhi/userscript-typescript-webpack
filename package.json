@@ -2,17 +2,22 @@
   "devDependencies": {
     "@types/node": "^10.12.18",
     "@types/webpack": "^4.4.23",
+    "cross-env": "^5.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^7.0.1",
-    "typescript": "^3.2.4",
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.4.0",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.ts",
-    "build-dev": "webpack --config webpack.config.ts --mode development",
-    "build-clip": "webpack --config webpack.config.ts && yarn run content-to-clipboard",
-    "build-clip-dev": "webpack --config webpack.config.ts --mode development && yarn run content-to-clipboard",
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "build-dev": "yarn build --mode development",
+    "build-clip": "yarn build && yarn content-to-clipboard",
+    "build-clip-dev": "yarn build-dev && yarn content-to-clipboard",
     "content-to-clipboard": "clip < dist/script.user.js"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.1"
   }
 }

@@ -38,7 +38,7 @@ const config: webpack.Configuration = {
       "node_modules",
       "src"
     ],
-    extensions: [".ts"],
+    extensions: [".ts", ".js"],
   },
   plugins: [
     new webpack.BannerPlugin({
