@@ -1,8 +1,7 @@
 import webpack from "webpack";
 import path from "path";
 import fs from "fs";
-
-const TerserPlugin = require('terser-webpack-plugin');
+import TerserPlugin from 'terser-webpack-plugin';
 
 const config: webpack.Configuration = {
   entry: "./src/userscript-main.ts",
