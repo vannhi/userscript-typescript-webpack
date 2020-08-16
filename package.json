@@ -3,7 +3,6 @@
     "@types/node": "^10.12.18",
     "@types/terser-webpack-plugin": "^1.2.1",
     "@types/webpack": "^4.4.23",
-    "cross-env": "^5.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.8.0",
@@ -12,13 +11,10 @@
     "webpack-cli": "^3.2.1"
   },
   "scripts": {
-    "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "build": "TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
     "build-dev": "yarn build --mode development",
-    "build-clip": "yarn build && yarn content-to-clipboard",
-    "build-clip-dev": "yarn build-dev && yarn content-to-clipboard",
-    "content-to-clipboard": "clip < dist/script.user.js"
-  },
-  "dependencies": {
-    "rxjs": "^6.5.1"
+    "deploy": "yarn build && yarn content-to-clipboard",
+    "dev": "yarn build-dev && yarn content-to-clipboard",
+    "content-to-clipboard": "pbcopy < dist/script.user.js"
   }
 }

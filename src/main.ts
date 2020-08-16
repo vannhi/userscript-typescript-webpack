@@ -9,10 +9,10 @@
 // @noframes
 // ==/UserScript==
 
-import { of } from 'rxjs';
+import test from "./lib/test";
 
-(function() {
-  of('world').subscribe(name => {
-    console.log(`Congratulation! You took over the ${name}!`);
-  });
-})();
+const main = () => {
+  console.log("Hello");
+  test();
+}
+main();

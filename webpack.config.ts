@@ -4,7 +4,7 @@ import fs from "fs";
 import TerserPlugin from 'terser-webpack-plugin';
 
 const config: webpack.Configuration = {
-  entry: "./src/userscript-main.ts",
+  entry: "./src/main.ts",
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -41,7 +41,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new webpack.BannerPlugin({
-      banner: fs.readFileSync(path.resolve(__dirname, "src/userscript-main.ts"), "utf-8").replace(/(==\/UserScript==)[\s\S]+$/, "$1"),
+      banner: fs.readFileSync(path.resolve(__dirname, "src/main.ts"), "utf-8").replace(/(==\/UserScript==)[\s\S]+$/, "$1"),
       entryOnly: true,
       raw: true
     })
